@@ -18,6 +18,7 @@
 
     .slick-slide img {
       width: 100%;
+      cursor: pointer;
     }
 
     .slick-prev:before,
@@ -26,6 +27,6 @@
     }
 
 #panorama {
-  width: 600px;
-  height: 400px;
+  width: 900px;
+  height: 750px;
 }
