@@ -2,7 +2,7 @@ $(document).ready(function(){
     (function init(){
         $.ajax('server/php').then(function(res){
             JSON.parse(res)['files'].forEach(function(el, i){
-                appendToSlider(createImageDiv(el.url));
+                appendToSlider(createImageDiv(el.url, el.name));
             });
             $(".regular").slick({
                 dots: true,
@@ -42,11 +42,12 @@ $(document).ready(function(){
     
 });
 
-var createImageDiv = function(url){
+var createImageDiv = function(url, title){
     var $newElement = $(document.createElement('div'));
     var $newImage = $(document.createElement('img'));
 
     $newImage.attr("src", url);
+    $newImage.attr("title", title);
     $newImage.on('click', function(){
         setNewPanellumImage(url);
     });
