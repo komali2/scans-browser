@@ -39,10 +39,7 @@ $(document).ready(function(){
         });
     });
 
-    pannellum.viewer('panorama', {
-        "type": "equirectangular",
-        "panorama": "test.png"
-    });
+    
 });
 
 var createImageDiv = function(url){
@@ -59,3 +56,11 @@ var createImageDiv = function(url){
 var appendToSlider = function(element){
     $('#slider-area').append(element);
 };
+
+function initPannellum(){
+    pannellum.viewer('panorama', {
+        "type": "equirectangular",
+        "panorama": "test.png",
+        "autoLoad": true
+    });
+}
