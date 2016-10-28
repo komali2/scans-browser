@@ -47,6 +47,9 @@ var createImageDiv = function(url){
     var $newImage = $(document.createElement('img'));
 
     $newImage.attr("src", url);
+    $newImage.on('click', function(){
+        setNewPanellumImage(url);
+    });
 
     $newElement.append($newImage);
     return $newElement;
@@ -57,10 +60,19 @@ var appendToSlider = function(element){
     $('#slider-area').append(element);
 };
 
-function initPannellum(){
+function initPannellum(url){
     pannellum.viewer('panorama', {
         "type": "equirectangular",
-        "panorama": "test.png",
+        "panorama": url,
         "autoLoad": true
     });
+}
+
+function clearPanellum(){
+    $('#panorama').html('');
+}
+
+function setNewPanellumImage(url){
+    clearPanellum();
+    initPannellum(url);
 }
