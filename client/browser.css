@@ -24,3 +24,8 @@
     .slick-next:before {
         color: black;
     }
+
+#panorama {
+  width: 600px;
+  height: 400px;
+}

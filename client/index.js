@@ -38,6 +38,11 @@ $(document).ready(function(){
             });
         });
     });
+
+    pannellum.viewer('panorama', {
+        "type": "equirectangular",
+        "panorama": "test.png"
+    });
 });
 
 var createImageDiv = function(url){
