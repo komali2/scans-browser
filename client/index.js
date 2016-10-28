@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#getFiles').click(function(){
+    (function init(){
         $.ajax('server/php').then(function(res){
             JSON.parse(res)['files'].forEach(function(el, i){
                 appendToSlider(createImageDiv(el.url));
@@ -37,7 +37,7 @@ $(document).ready(function(){
                 ]
             });
         });
-    });
+    })();
 
     
 });
